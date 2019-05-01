@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81.7 62">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #458fcd;
+      }
+    </style>
+  </defs>
+  <title>Asset 2</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g id="Group_1" data-name="Group 1">
+        <g id="Path_11" data-name="Path 11">
+          <path class="cls-1" d="M4.17,62A4.17,4.17,0,0,1,0,57.83V4.17A4.17,4.17,0,0,1,4.17,0H77.54A4.17,4.17,0,0,1,81.7,4.17V57.83A4.17,4.17,0,0,1,77.54,62Zm0-60A2.17,2.17,0,0,0,2,4.17V57.83A2.17,2.17,0,0,0,4.17,60H77.54a2.17,2.17,0,0,0,2.16-2.17V4.17A2.17,2.17,0,0,0,77.54,2Z"/>
+        </g>
+        <g id="Group_6" data-name="Group 6">
+          <g id="Group_5" data-name="Group 5">
+            <g id="Line_16" data-name="Line 16">
+              <path class="cls-1" d="M72.81,21.6H42.71a1,1,0,0,1,0-2h30.1a1,1,0,0,1,0,2Z"/>
+            </g>
+            <g id="Line_17" data-name="Line 17">
+              <path class="cls-1" d="M72.81,30.65H42.71a1,1,0,0,1,0-2h30.1a1,1,0,0,1,0,2Z"/>
+            </g>
+            <g id="Line_18" data-name="Line 18">
+              <path class="cls-1" d="M72.81,39.7H42.71a1,1,0,1,1,0-2h30.1a1,1,0,0,1,0,2Z"/>
+            </g>
+          </g>
+          <g id="Rectangle_12" data-name="Rectangle 12">
+            <path class="cls-1" d="M33.63,40.36h-23a2.1,2.1,0,0,1-2.09-2.09V21a2.1,2.1,0,0,1,2.09-2.09h23A2.1,2.1,0,0,1,35.72,21V38.27A2.1,2.1,0,0,1,33.63,40.36Zm-23-19.42a.09.09,0,0,0-.09.09V38.27a.09.09,0,0,0,.09.09h23a.09.09,0,0,0,.09-.09V21a.09.09,0,0,0-.09-.09Z"/>
+          </g>
+        </g>
+        <g id="Line_19" data-name="Line 19">
+          <path class="cls-1" d="M46.71,9.19H38a1,1,0,0,1,0-2h8.69a1,1,0,1,1,0,2Z"/>
+        </g>
+        <g id="Line_20" data-name="Line 20">
+          <path class="cls-1" d="M18.23,9.19H9.54a1,1,0,0,1,0-2h8.69a1,1,0,1,1,0,2Z"/>
+        </g>
+        <g id="Line_21" data-name="Line 21">
+          <path class="cls-1" d="M59.76,9.19H51.07a1,1,0,0,1,0-2h8.69a1,1,0,1,1,0,2Z"/>
+        </g>
+        <g id="Line_22" data-name="Line 22">
+          <path class="cls-1" d="M72.81,9.19H64.12a1,1,0,0,1,0-2h8.69a1,1,0,1,1,0,2Z"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
