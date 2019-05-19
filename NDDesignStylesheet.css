@@ -1,0 +1,1295 @@
+<!DOCTYPE html>
+<style>
+
+*{
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+A {text-decoration: none;}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen
+and (min-width: 992px)
+{
+
+  .mainBody{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F9FD;
+  }
+
+  .mainSection{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animationContainer{
+		height: auto;
+		width: 700px;
+    margin-bottom: -60px;
+  }
+
+  .titleText{
+    opacity: 0;
+		font-weight: 100;
+		letter-spacing: 10px;
+		font-size: 75px;
+  	color: #458FCD;
+    text-align: center;
+    margin-bottom: 125px;
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-delay: 2.25s;
+    animation-fill-mode:forwards;
+	}
+
+  .categoryDiv{
+    opacity: 0;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .category{
+    width: 25%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #458FCD;
+  }
+
+  .categoryRight{
+    border-right: 0px !important;
+  }
+
+  .categoryImages{
+    height: 40px;
+  }
+
+  .categoryText{
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 18px;
+    color: #458FCD;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: -13px;
+  }
+
+  .copyright{
+    width: 100%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 16px;
+    position: fixed;
+    text-align: center;
+    bottom: -15px;
+    color: #458FCD;
+  }
+
+  .wrapper {
+    opacity: 0;
+    display: block;
+    z-index: 999;
+    position: fixed;
+    left: 80px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper2 {
+    opacity: 0;
+    display: block;
+    z-index: 999;
+    position: fixed;
+    left: 50%;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper3 {
+    opacity: 0;
+    display: block;
+    z-index: 999;
+    position: fixed;
+    right: -55px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  h1 a {
+    font-weight: 200;
+    letter-spacing: 3px;
+    font-size: 28px;
+    color: #458FCD;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+
+  a.effect-underline:after {
+  	content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+  }
+
+  a.effect-underline:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+
+    .hamburgerDiv{
+      position: absolute;
+      right: 25px;
+      top: 10px;
+      height: 35px;
+      width: 35px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-content: stretch;
+      z-index: 10000;
+      display: none;
+      cursor: pointer;
+      opacity: 0;
+      animation-name: fadein;
+      animation-duration: 1.5s;
+      animation-delay: 6.5s;
+      animation-fill-mode:forwards;
+    }
+
+    .hamburgerLines{
+      width: 100%;
+      background-color: #458FCD;
+      border-radius: 10px;
+      height: 1px;
+      display: none;
+    }
+
+    .transform{
+      transition: all 1s ease;
+      display: none;
+    }
+
+    .transform1{
+      transition: all 1s ease;
+      display: none;
+    }
+
+    .transform-active{
+      width: 0%;
+      opacity: 0;
+      margin-left: 50%;
+      background-color: #458FCD;
+      border-radius: 10px;
+      height: 1px;
+      display: none;
+    }
+
+    .overlayMenu{
+      position: fixed;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
+      overflow-x: hidden;
+      height: 100vh;
+      width: 100vw;
+      opacity: 0;
+      z-index: 9999;
+      background-color: #f5f9fd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      display: none;
+    }
+
+    .overlayMenuContainer{
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      display: none;
+    }
+
+    .overlayMenuItems{
+      font-weight: 200;
+      letter-spacing: 2px;
+      font-size: 32px;
+      color: #458FCD;
+      text-align: center;
+      display: none;
+    }
+
+    .menu-active{
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      opacity: 0.95;
+      z-index: 9999;
+      background-color: #f5f9fd;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+}
+
+@media only screen
+and (max-width: 992px)
+and (min-width: 768px)
+{
+
+  .mainBody{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F9FD;
+  }
+
+  .mainSection{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animationContainer{
+		height: auto;
+		width: 500px;
+    margin-bottom: -35px;
+  }
+
+  .titleText{
+		font-weight: 100;
+		letter-spacing: 8px;
+		font-size: 55px;
+  	color: #458FCD;
+    text-align: center;
+    margin-bottom: 100px;
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-delay: 2.25s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+	}
+
+  .categoryDiv{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+
+  .category{
+    width: 25%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #458FCD;
+  }
+
+  .categoryRight{
+    border-right: 0px !important;
+  }
+
+  .categoryImages{
+    height: 30px;
+  }
+
+  .categoryText{
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #458FCD;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: -13px;
+  }
+
+  .copyright{
+    width: 100%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 16px;
+    position: fixed;
+    text-align: center;
+    bottom: -15px;
+    color: #458FCD;
+  }
+
+  .hamburgerDiv{
+    position: absolute;
+    right: 27.5px;
+    top: 10px;
+    height: 35px;
+    width: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: stretch;
+    z-index: 10000;
+    cursor: pointer;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+
+  .hamburgerLines{
+    width: 100%;
+    background-color: #458FCD;
+    border-radius: 10px;
+    height: 1px;
+  }
+
+  .transform{
+    transition: all 1s ease;
+  }
+
+  .transform1{
+    transition: all 1s ease;
+  }
+
+  .transform-active{
+    width: 0%;
+    opacity: 0;
+    margin-left: 50%;
+    background-color: #458FCD;
+    border-radius: 10px;
+    height: 1px;
+  }
+
+  .overlayMenu{
+    overflow-x: hidden;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    z-index: 9999;
+    background-color: #f5f9fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlayMenuContainer{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .overlayMenuItems{
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 32px;
+    color: #458FCD;
+    text-align: center;
+  }
+
+  .menu-active{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    opacity: 0.95;
+    z-index: 9999;
+    background-color: #f5f9fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrapper {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    left: 80px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper2 {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    left: 50%;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper3 {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    right: -55px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  h1 a {
+    font-weight: 200;
+    letter-spacing: 3px;
+    font-size: 28px;
+    color: #458FCD;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+
+  a.effect-underline:after {
+  	content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+  }
+
+  a.effect-underline:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@media only screen
+and (max-width: 768px)
+and (min-width: 450px)
+{
+
+  .mainBody{
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F9FD;
+    padding-top: 150px;
+  }
+
+  .mainSection{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animationContainer{
+		height: auto;
+		width: 425px;
+    margin-bottom: -30px;
+  }
+
+  .titleText{
+		font-weight: 100;
+		letter-spacing: 5px;
+		font-size: 45px;
+  	color: #458FCD;
+    text-align: center;
+    margin-bottom: 60px;
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-delay: 2.25s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+	}
+
+  .categoryDiv{
+    height: 600px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 125px;
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .category{
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #458FCD;
+  }
+
+  .categoryRight{
+    border-bottom: 0px !important;
+  }
+
+  .categoryImages{
+    height: 35px;
+    margin-bottom: 0px;
+  }
+
+  .categoryText{
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 16px;
+    color: #458FCD;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: -13px;
+  }
+
+  .copyright{
+    width: 100%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 16px;
+    position: absolute;
+    text-align: center;
+    bottom: -15px;
+    color: #458FCD;
+  }
+
+  .hamburgerDiv{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: stretch;
+    z-index: 10000;
+    cursor: pointer;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+
+  .hamburgerLines{
+    width: 100%;
+    background-color: #458FCD;
+    border-radius: 10px;
+    height: 1px;
+  }
+
+  .transform{
+    transition: all 1s ease;
+  }
+
+  .transform1{
+    transition: all 1s ease;
+  }
+
+  .transform-active{
+    width: 0%;
+    opacity: 0;
+    margin-left: 50%;
+    background-color: #458FCD;
+    border-radius: 10px;
+    height: 1px;
+  }
+
+  .overlayMenu{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    z-index: 9999;
+    background-color: #f5f9fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlayMenuContainer{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .overlayMenuItems{
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 32px;
+    color: #458FCD;
+    text-align: center;
+  }
+
+  .menu-active{
+    position: fixed;
+    top: 0px;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.95;
+    z-index: 9999;
+    background-color: #f5f9fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrapper {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    left: 80px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper2 {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    left: 50%;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper3 {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    right: -55px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  h1 a {
+    font-weight: 200;
+    letter-spacing: 3px;
+    font-size: 28px;
+    color: #458FCD;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+
+  a.effect-underline:after {
+  	content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+  }
+
+  a.effect-underline:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@media only screen
+and (max-width: 450px)
+{
+
+  .mainBody{
+    position: relative;
+    overflow-x: hidden;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F5F9FD;
+    padding-top: 150px;
+  }
+
+  .mainSection{
+    position: relative;
+    width: 90%;
+    height: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .animationContainer{
+		height: auto;
+		width: 250px;
+    margin-bottom: -30px;
+  }
+
+  .titleText{
+		font-weight: 100;
+		letter-spacing: 3px;
+		font-size: 35px;
+  	color: #458FCD;
+    text-align: center;
+    margin-bottom: 60px;
+    animation-name: fadein;
+    animation-duration: 2s;
+    animation-delay: 2.25s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+	}
+
+  .categoryDiv{
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+    margin-bottom: 100px;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+
+  .category{
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+    height: 400px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #458FCD;
+  }
+
+  .categoryRight{
+    border-bottom: 0px !important;
+  }
+
+  .categoryImages{
+    height: 30px;
+    margin-bottom: -5px;
+  }
+
+  .categoryText{
+    font-weight: 300;
+    letter-spacing: 2px;
+    font-size: 14px;
+    color: #458FCD;
+    text-align: center;
+    line-height: 1.3;
+    margin-bottom: -13px;
+  }
+
+  .copyright{
+    width: 100%;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-size: 16px;
+    position: absolute;
+    text-align: center;
+    bottom: -15px;
+    color: #458FCD;
+  }
+
+  .hamburgerDiv{
+    position: fixed;
+    right: 15px;
+    top: 15px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: stretch;
+    z-index: 10000;
+    cursor: pointer;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+    opacity: 0;
+  }
+
+  .hamburgerLines{
+    width: 100%;
+    background-color: #458FCD;
+    border-radius: 10px;
+    height: 1px;
+  }
+
+  .transform{
+    transition: all 1s ease;
+  }
+
+  .transform1{
+    transition: all 1s ease;
+  }
+
+  .transform-active{
+    width: 0%;
+    opacity: 0;
+    margin-left: 50%;
+    background-color: #458FCD;
+    border-radius: 10px;
+    height: 1px;
+  }
+
+  .overlayMenu{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    overflow-x: hidden;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0;
+    z-index: 9999;
+    background-color: #f5f9fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .overlayMenuContainer{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .overlayMenuItems{
+    font-weight: 200;
+    letter-spacing: 2px;
+    font-size: 32px;
+    color: #458FCD;
+    text-align: center;
+  }
+
+  .menu-active{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.95;
+    z-index: 9999;
+    background-color: #f5f9fd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .wrapper {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    left: 80px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper2 {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    left: 50%;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  .wrapper3 {
+    display: none;
+    z-index: 999;
+    position: fixed;
+    right: -55px;
+    top: 35px;
+    -webkit-transform: translate(-50%,-50%);
+    opacity: 0;
+    animation-name: fadein;
+    animation-duration: 1.5s;
+    animation-delay: 6.5s;
+    animation-fill-mode:forwards;
+  }
+
+  h1 a {
+    font-weight: 200;
+    letter-spacing: 3px;
+    font-size: 28px;
+    color: #458FCD;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+  }
+
+  a.effect-underline:after {
+  	content: '';
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    height: 1em;
+    width: 100%;
+    border-bottom: 1px solid;
+    margin-top: 10px;
+    opacity: 0;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(0,1);
+    transform: scale(0,1);
+  }
+
+  a.effect-underline:hover:after {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.mainBody{
+  background-color: #F5F9FD;
+  overflow: hidden;
+}
+
+.heroIcon{
+  width: 135px;
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+.heroSection{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageSection {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.pageContent{
+  display: flex;
+  flex-direction: column;
+  max-width: 1100px;
+  margin-left: 25px;
+  margin-right: 25px;
+}
+
+.titleText{
+  font-weight: 100;
+  letter-spacing: 10px;
+  font-size: 70px;
+  color: #458FCD;
+  text-align: center;
+  margin-bottom: 120px;
+}
+
+.titleText1{
+  font-weight: 200;
+  letter-spacing: 6px;
+  font-size: 25px;
+  color: #52B2E5;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.paragraphText{
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 16px;
+  color: #458FCD;
+  text-align: center;
+  margin-bottom: 75px;
+}
+
+.titleTextDiv{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.logoLinkBox{
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
+
+.logo{
+  height: 40px;
+}
+
+.navBar{
+  width: auto;
+  height: 60px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 100px;
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 100;
+  padding-left: 18px;
+  padding-right: 18px
+}
+
+.navItemDivs{
+  position: relative;
+  width: auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navItemText{
+  width: auto;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: #458FCD;
+  text-align: center;
+}
+
+.navItemTextLeft{
+  width: 100%;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: #458FCD;
+  text-align: left;
+}
+
+.navItemTextRight{
+  width: 100%;
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 20px;
+  color: #458FCD;
+  text-align: Right;
+}
+
+.contactGrid{
+  min-width: 850px;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-column-gap: 25px;
+  align-self: center;
+}
+
+.contactGridItems{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 100px;
+}
+
+.contactGridIcons{
+  height: 45px;
+  margin-bottom: 5px;
+}
+
+.contactAnimation{
+  width: 160px;
+  align-self: center;
+  padding-bottom: 10px;
+}
+
+*{
+  font-family: "Montserrat", Helvetica, Arial, sans-serif;
+}
+
+.contactText{
+  font-weight: 300;
+  letter-spacing: 2px;
+  font-size: 14px;
+  color: #458FCD;
+  text-align: center;
+  line-height: 1.3;
+}
+
+.copyright{
+  width: 100%;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 16px;
+  position: absolute;
+  text-align: center;
+  bottom: -15px;
+  color: #458FCD;
+}
+
+
+
+</style>
